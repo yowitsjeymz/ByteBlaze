@@ -1,0 +1,15 @@
+bot:
+  TOKEN: '${TOKEN}'
+  OWNER_ID: '1074147049735467058'
+  PREFIX: '.'
+  ACTIVITY_STATUS: false
+  GENIUS_TOKEN: ''
+
+player:
+  NODES:
+    - host: '${LAVALINK_HOST}'
+      port: 443
+      name: 'mainnode'
+      auth: '${LAVALINK_PASSWORD}'
+      secure: true
+      driver: 'lavalink@4'
