@@ -1,14 +1,13 @@
-FROM node:alpine
-# Create the bot's directory
-RUN mkdir -p /main/bot
+FROM node:20-alpine
+
 WORKDIR /main/bot
-ENV NODE_PATH=/usr/local/lib/node_modules
-COPY package.json /main/bot
-COPY tsconfig.json /main/bot
-RUN npm i
-COPY . /main/bot
-ENV NODE_PATH=/usr/local/lib/node_modules
-LABEL name="byteblaze" version="5.0"
-# Start the bot.
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
 RUN npm run build
-CMD ["npm", "run", "start"]
+
+CMD ["node", "--no-deprecation", "./dist/index.js"]
+
