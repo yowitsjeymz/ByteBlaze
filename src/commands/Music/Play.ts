@@ -86,7 +86,8 @@ export default class implements Command {
 
     player.textId = handler.channel!.id
 
-    const result = await player.search(value, { requester: handler.user })
+    const search = /^https?:\/\//.test(value) ? value : `ytsearch:${value}`
+const result = await player.search(search, { requester: handler.user })
     const tracks = result.tracks.filter((e) =>
       typeof maxLength !== 'string' ? e.duration > maxLength : e
     )
@@ -209,7 +210,8 @@ export default class implements Command {
       })
       return
     }
-    const searchRes = await client.rainlink.search(url || Random)
+    const autoSearch = /^https?:\/\//.test(url || '') ? (url || Random) : `ytsearch:${url || Random}`
+const searchRes = await client.rainlink.search(autoSearch)
 
     const tracks = searchRes.tracks.filter((e) => (maxLength ? e.duration > maxLength : e))
 
