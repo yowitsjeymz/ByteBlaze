@@ -4,8 +4,8 @@ bot:
 
 player:
   NODES:
-    - host: "lavalink-4.railway.internal"
-      port: 8080
+    - host: "${LAVALINK_HOST}"
+      port: ${LAVALINK_PORT}
       name: "main"
-      auth: "gkhmusic"
-      secure: false
+      auth: "${LAVALINK_PASSWORD}"
+      secure: ${LAVALINK_SECURE}
