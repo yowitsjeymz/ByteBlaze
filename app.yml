@@ -1,11 +1,11 @@
 bot:
-  TOKEN: 'YOUR_BOT_TOKEN'
-  OWNER_ID: '1074147049735467058'
+  TOKEN: "${TOKEN}"
+  OWNER_ID: "${OWNER_ID}"
 
 player:
   NODES:
-    - host: 'lavalink-4.railway.internal'
+    - host: "lavalink-4.railway.internal"
       port: 8080
-      name: 'Lunox'
-      auth: 'gkhmusic'
+      name: "main"
+      auth: "gkhmusic"
       secure: false
