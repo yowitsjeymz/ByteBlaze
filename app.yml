@@ -1,0 +1,11 @@
+bot:
+  TOKEN: 'YOUR_BOT_TOKEN'
+  OWNER_ID: 'YOUR_DISCORD_USER_ID'
+
+player:
+  NODES:
+    - host: 'YOUR_LAVALINK_HOST'
+      port: 8080
+      name: 'Lunox'
+      auth: 'gkhmusic'
+      secure: false
